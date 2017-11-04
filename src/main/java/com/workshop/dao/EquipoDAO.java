@@ -19,7 +19,6 @@ public class EquipoDAO {
 	}
 
 	public boolean addEquipo(Equipo e) {
-		// Check for already exists
 		try {
 			em.getTransaction().begin();
 			em.persist(e);

@@ -43,13 +43,13 @@ public class EquipoServiceAPI {
 
 	@ApiMethod(name = "update", path = "equipo", httpMethod = ApiMethod.HttpMethod.PUT)
 	public Equipo updateEquipo(Equipo e) throws NotFoundException, InternalServerErrorException {
-		if (equipoService.getEquipoById(e.getIdEquipo()) != null) {
+		if (equipoService.getEquipoById(e.getIdEquipo()) == null) {
 			throw new NotFoundException("Equipo no existe.");
 		}
 		if (equipoService.updateEquipo(e)) {
 			return e;
 		} else {
-			throw new InternalServerErrorException("Equipo no se pudo agregar.");
+			throw new InternalServerErrorException("Equipo no se pudo actualizar.");
 		}
 	}
 
