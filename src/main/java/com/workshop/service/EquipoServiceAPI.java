@@ -52,9 +52,9 @@ public class EquipoServiceAPI {
 			throw new InternalServerErrorException("Equipo no se pudo actualizar.");
 		}
 	}
-
+	
 	@Transactional
-	@ApiMethod(name = "remove", path = "equipo/{id}", httpMethod = ApiMethod.HttpMethod.POST)
+	@ApiMethod(name = "remove", path = "equipo/remove/{id}", httpMethod = ApiMethod.HttpMethod.POST)
 	public Equipo removeTeam(@Named("id") String id) throws NotFoundException {
 		Equipo equipo = equipoService.removeEquipo(id);
 		if (equipo != null) {
