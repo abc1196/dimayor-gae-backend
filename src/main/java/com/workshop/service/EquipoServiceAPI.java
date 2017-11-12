@@ -54,7 +54,7 @@ public class EquipoServiceAPI {
 	}
 
 	@Transactional
-	@ApiMethod(name = "remove", path = "equipo/{id}", httpMethod = ApiMethod.HttpMethod.DELETE)
+	@ApiMethod(name = "remove", path = "equipo/{id}", httpMethod = ApiMethod.HttpMethod.POST)
 	public Equipo removeTeam(@Named("id") String id) throws NotFoundException {
 		Equipo equipo = equipoService.removeEquipo(id);
 		if (equipo != null) {
